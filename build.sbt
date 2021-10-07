@@ -1,3 +1,5 @@
+import sbt.Keys.licenses
+
 val json4sV = "3.6.7"
 val specs2V = "4.8.1"
 val slf4jV = "1.7.30"
@@ -23,10 +25,30 @@ def module(name: String) = Project(name, file(name))
 
     Defaults.itSettings,
 
-    publishTo := sonatypePublishToBundle.value,
-    sonatypeCredentialHost := "s01.oss.sonatype.org",
-    credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+    publishSettings
   )
+
+val publishSettings = Seq(
+  publishTo := sonatypePublishToBundle.value,
+  sonatypeCredentialHost := "s01.oss.sonatype.org",
+  credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
+
+  scmInfo := Some(ScmInfo(
+    url("https://github.com/IHomer/scala-ocpp"),
+    "scm:git@github.com:IHomer/scala-ocpp.git"
+  )),
+
+  description := "Scala library for Open Charge Point Protocol (OCPP). Originally developed by NewMotion, now maintained by IHomer",
+
+  licenses := Seq("GPLv3" -> new URL("https://www.gnu.org/licenses/gpl-3.0.en.html")),
+
+  homepage := Some(url("https://github.com/IHomer/scala-ocpp")),
+
+  developers := List(
+    Developer(id="t3hnar", name="Yaroslav Klymko", email="t3hnar@gmail.com", url=url("https://github.com/t3hnar")),
+    Developer(id="tux_rocker", name="Reinier Lamers", email="reinier.lamers@ihomer.nl", url=url("http://reinier.de/"))
+  )
+)
 
 val messages = module("ocpp-messages")
 
@@ -82,4 +104,4 @@ val exampleJsonServer20 =
 crossScalaVersions := Seq("2.13.1", "2.12.10", "2.11.12")
 
 // don't publish the outer enclosing project, i.e. "com.infuse-ev" % "scala-ocpp"
-publish /skip := true
+publish / skip := true
