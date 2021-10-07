@@ -54,14 +54,14 @@ So if you want to use the high-level OCPP-J connection interface, and you're
 using SBT, you can declare the dependency by adding this this to your `build.sbt` after publishing the library:
 
 ```
-libraryDependencies += "com.thenewmotion.ocpp" %% "ocpp-j-api" % "9.2.2"
+libraryDependencies += "com.infuse-ev" %% "ocpp-j-api" % "9.2.2"
 ```
 
 With Maven, add this to your dependencies:
 
 ```xml
     <dependency>
-        <groupId>com.thenewmotion.ocpp</groupId>
+        <groupId>com.infuse-ev</groupId>
         <artifactId>ocpp-j-api_2.11</artifactId>
         <version>9.2.2</version>
     </dependency>
