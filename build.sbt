@@ -18,9 +18,14 @@ val mockServerNetty = "org.mock-server" % "mockserver-netty" % "5.8.0"  % "test"
 def module(name: String) = Project(name, file(name))
   .configs(IntegrationTest)
   .settings(
-    organization := "com.thenewmotion.ocpp",
+    organization := "com.infuse-ev",
     libraryDependencies += specs2,
-    Defaults.itSettings
+
+    Defaults.itSettings,
+
+    publishTo := sonatypePublishToBundle.value,
+    sonatypeCredentialHost := "s01.oss.sonatype.org",
+    credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
   )
 
 val messages = module("ocpp-messages")
@@ -76,4 +81,5 @@ val exampleJsonServer20 =
 
 crossScalaVersions := Seq("2.13.1", "2.12.10", "2.11.12")
 
-publish := {}
+// don't publish the outer enclosing project, i.e. "com.infuse-ev" % "scala-ocpp"
+publish /skip := true
