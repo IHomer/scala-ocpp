@@ -863,6 +863,16 @@ Charging Station Management System operations:
 
 ## Changelog
 
+### Changes in 9.2.4
+
+ - Send compliant HTTP Basic authentication headers when used as WebSocket client
+
+ - Set up SBT for publishing to Maven Central
+
+### Changes in 9.2.3
+
+ - Improve error reporting
+
 ### Changes in 9.2.2
 
  - JsonOperations.reqRes: handle serialization and deserialisation both within Future context
