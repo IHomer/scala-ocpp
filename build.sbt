@@ -30,8 +30,8 @@ def module(name: String) = Project(name, file(name))
 
 val publishSettings = Seq(
   publishTo := sonatypePublishToBundle.value,
+
   sonatypeCredentialHost := "s01.oss.sonatype.org",
-  credentials += Credentials(Path.userHome / ".sbt" / ".credentials"),
 
   scmInfo := Some(ScmInfo(
     url("https://github.com/IHomer/scala-ocpp"),
@@ -105,3 +105,7 @@ crossScalaVersions := Seq("2.13.1", "2.12.10", "2.11.12")
 
 // don't publish the outer enclosing project, i.e. "com.infuse-ev" % "scala-ocpp"
 publish / skip := true
+
+// publishing settings needed at the top level project when running "sonatypeBundleRelease"
+sonatypeCredentialHost := "s01.oss.sonatype.org"
+sonatypeProfileName := "com.infuse-ev"
