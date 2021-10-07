@@ -46,7 +46,7 @@ val publishSettings = Seq(
 
   developers := List(
     Developer(id="t3hnar", name="Yaroslav Klymko", email="t3hnar@gmail.com", url=url("https://github.com/t3hnar")),
-    Developer(id="tux_rocker", name="Reinier Lamers", email="reinier.lamers@ihomer.nl", url=url("http://reinier.de/"))
+    Developer(id="tux_rocker", name="Reinier Lamers", email="reinier.lamers@ihomer.nl", url=url("https://reinier.de/"))
   )
 )
 
