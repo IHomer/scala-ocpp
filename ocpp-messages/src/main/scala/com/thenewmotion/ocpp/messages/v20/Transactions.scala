@@ -15,7 +15,7 @@ case class TransactionEventRequest(
   numberOfPhasesUsed: Option[Int],
   cableMaxCurrent: Option[BigDecimal],
   reservationId: Option[Int],
-  transactionData: Transaction,
+  transactionInfo: Transaction,
   evse: Option[EVSE],
   idToken: Option[IdToken]
 ) extends CsmsRequest
