@@ -222,7 +222,7 @@ object TriggerReason extends Enumerable[TriggerReason] {
 }
 
 case class Transaction(
-  id: String,
+  transactionId: String,
   chargingState: Option[ChargingState],
   timeSpentCharging: Option[Int],
   stoppedReason: Option[Reason],
