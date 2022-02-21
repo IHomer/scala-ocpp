@@ -145,7 +145,7 @@ object SimpleClientWebSocketComponent {
   final val wsSubProtocolForOcppVersion: Map[Version, String] = Map(
     Version.V15 -> "ocpp1.5",
     Version.V16 -> "ocpp1.6",
-    Version.V20 -> "ocpp2.0"
+    Version.V20 -> "ocpp2.0.1"
   )
 
   final val ocppVersionForWsSubProtocol = wsSubProtocolForOcppVersion.map(_.swap)
