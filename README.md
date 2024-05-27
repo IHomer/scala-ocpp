@@ -95,6 +95,16 @@ you can see how the client API is used:
  * `OcppJsonClient` is an instance of the [`OutgoingOcppEndpoint`](ocpp-j-api/src/main/scala/com/thenewmotion/ocpp/json/api/OutgoingOcppEndpoint.scala)
    trait. This trait defines this interface.
 
+### How to publish locally
+
+In order to publish the library locally, you can run the following command:
+
+```
+sbt publishLocal
+```
+
+**_NOTE:_** Make sure to change the version in the `version.sbt` file before publishing.
+
 #### Handling requests
 
 To specify the request handler, we use a [_magnet pattern_](http://spray.io/blog/2012-12-13-the-magnet-pattern/).
